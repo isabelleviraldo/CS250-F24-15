@@ -1,4 +1,12 @@
 # Point of Sale System
+
+## Table of Contents
+- [Authors](##Authors)
+- [System Description](##System-Description)
+- [Software Architecture Overview](##Software-Architecture-Overview)
+- [Development Plan and Timeline](##Development-Plan-and-Timeline)
+- [Class Descriptions](##Class-Descriptions)
+
 ## Authors
 Isabelle Viraldo
 Nicholas Moffat
@@ -55,17 +63,22 @@ To develop this software system, the team needs a team of 5 people, consisting o
 
 ## Class Descriptions
 **User:**
+
 The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
 
 **Item:**
+
 An item is anything in the store that can be purchased. Each item has an identifying ID that make it easy to search for in the inventory. When the barcode gets scanned, it searches in the item hashmap for the item. The item can also be searched for manually using the other identifiers, the name, color, size, and amount. This class has methods for retrieving the identifiers.
 
 **Inventory:**
+
 Each item object is stored here in the inventory hashmap. Using a hash is easier since it allows for O(1) runtime rather than O(n) runtime after accessing an array. Each item ID is the “key” and the item object is what is returned. The methods in this class allow you to add an item object, remove an item, retrieve an item or print a full list of the inventory.
 
 **Transaction:**
+
 Each transaction creates a new transaction object that gets added to the transaction history array, and since we are coding in python, this array is dynamically sized to fit each new transaction. Each transaction object has a purchase total, transaction ID and transaction date. This class has methods for retrieving each attribute.
 
 **Transaction History:**
+
 Each transaction object is stored in one instance of the transaction history class. When a transaction is either created or refunded, the list is updated. When you update the list, you declare whether its an addition or a removal as a second parameter to the transaction object. This then tells the system to remove or add it to the list.
 
