@@ -26,18 +26,22 @@ To develop this software system, the team needs a team of 5 people, consisting o
   Meet with users at store to gather further requirements
   Develop documentation
   Define use cases for various functions 
+  
 **Week 2**:
   Design system architecture
   Develop wireframes and prototypes for the UI
+  
 **Weeks 3 - 8**:
   Develop UI
   Develop software 
   Integrate with hardware
   Integrate with data storage
+  
 **Week 9**:
   Test individual components
   Ensure all parts work together
   Have employees test the system
+  
 **Week 10**:
   Start using in a real store
   Complete documentation
