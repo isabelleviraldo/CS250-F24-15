@@ -1,8 +1,8 @@
 # Point of Sale System
 ## Authors
-- Isabelle Viraldo
-- Nicholas Moffat
-- Seven Blackwell
+Isabelle Viraldo
+Nicholas Moffat
+Seven Blackwell
 
 ## System Description
 This is the document describing the development of a catalog system for any clothing store to buy, and to implement. This system excels at documenting the inventory and managing transactions. This system will be utilized by managers and employees to ensure inventory information is efficiently and accurately maintained. 
@@ -23,24 +23,24 @@ operation#2
 To develop this software system, the team needs a team of 5 people, consisting of 2 Software Developers, a UI developer, a Project Manager, and a Quality Assurance Engineer. Working with a budget of $200,000, the product can be developed and launched in the span of 10 weeks by following the development plan below. 
 
 **Week 1**:
-- Meet with users at store to gather further requirements
-- Develop documentation
-- Define use cases for various functions 
+  Meet with users at store to gather further requirements
+  Develop documentation
+  Define use cases for various functions 
 **Week 2**:
-- Design system architecture
-- Develop wireframes and prototypes for the UI
+  Design system architecture
+  Develop wireframes and prototypes for the UI
 **Weeks 3 - 8**:
-- Develop UI
-- Develop software
-- Integrate with hardware
-- Integrate with data storage
+  Develop UI
+  Develop software 
+  Integrate with hardware
+  Integrate with data storage
 **Week 9**:
-- Test individual components
-- Ensure all parts work together
-- Have employees test the system
+  Test individual components
+  Ensure all parts work together
+  Have employees test the system
 **Week 10**:
-- Start using in a real store
-- Complete documentation
+  Start using in a real store
+  Complete documentation
 
 ## Class Descriptions
 **User:**
