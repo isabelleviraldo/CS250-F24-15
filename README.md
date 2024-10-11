@@ -1,11 +1,11 @@
 # Point of Sale System
 
 ## Table of Contents
-- [Authors](##Authors)
-- [System Description](##System-Description)
-- [Software Architecture Overview](##Software-Architecture-Overview)
-- [Development Plan and Timeline](##Development-Plan-and-Timeline)
-- [Class Descriptions](##Class-Descriptions)
+- [Authors](#authors)
+- [System Description](#system-Description)
+- [Software Architecture Overview](#software-Architecture-Overview)
+- [Development Plan and Timeline](#development-Plan-and-Timeline)
+- [Class Descriptions](#class-Descriptions)
 
 ## Authors
 Isabelle Viraldo
