@@ -9,7 +9,6 @@
   - [Transaction History Class](#transaction-history-class)
   - [Transaction Object](#transaction-object)
 - [Development Plan and Timeline](#development-plan-and-timeline)
-- [Class Descriptions](#class-descriptions)
 
 ## Authors
 Isabelle Viraldo
