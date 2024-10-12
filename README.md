@@ -20,7 +20,8 @@ The system is designed to streamline sales processes, enabling employees to comp
 ## Software Architecure Overview
 Architectural diagram of all major components
 
-UML Class Diagram
+![image](https://github.com/user-attachments/assets/514dbfa1-2907-4413-8a14-d0414af540cc)
+
 
 Class #1
 
