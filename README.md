@@ -33,30 +33,30 @@ The system is designed to streamline sales processes, enabling employees to comp
 The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
 
 Attributes: 
-Employee_pin: int
-Each employee has a unique PIN that they must use to access the system. To access administrative features, admin users must have this.
-Username: string
-A string that serves as the user’s system identity. During the login process, the username is used to verify the user’s identity. 
-Password: string
-String for authentication when combined with the username.
-Admin_privileges: boolean
-Gives a signal that the user has administrative powers; when true, the user may advance to unique system features. 
+- Employee_pin: int
+  - Each employee has a unique PIN that they must use to access the system. To access administrative features, admin users must have this.
+- Username: string
+  - A string that serves as the user’s system identity. During the login process, the username is used to verify the user’s identity. 
+- Password: string
+  - String for authentication when combined with the username.
+- Admin_privileges: boolean
+  - Gives a signal that the user has administrative powers; when true, the user may advance to unique system features. 
 
 Operations:
-get_pin(): int
-Integer that gives the PIN back; used to confirm access, especially for those who require admin power.
-get_username(): string
-Obtains username of whoever is using the system; used to verify user upon logging in.
-get_password(): string
-Retrieves users' saved password so that it can be evaluated during the process of authentication. Passwords must be hashed.
-Is_admin: boolean
-If user has administrative power, true is returned, else: return false. This essentially aids when deciding what system features can access. 
-set_admin(employee_pin): int
-Grants admin power if the employee PIN that has been entered is accurate. This process verifies that the PIN entered and the one on file matches. 
-login(username, password): boolean
-Authenticates user, comparing the password and username entered as well. If correct: return true ; allowing system access 
-logout()
-Logs user out; makes sure that no other operations are carried out after logging out. 
+- get_pin(): int
+  - Integer that gives the PIN back; used to confirm access, especially for those who require admin power.
+- get_username(): string
+  - Obtains username of whoever is using the system; used to verify user upon logging in.
+- get_password(): string
+  - Retrieves users' saved password so that it can be evaluated during the process of authentication. Passwords must be hashed.
+- Is_admin: boolean
+  - If user has administrative power, true is returned, else: return false. This essentially aids when deciding what system features can access. 
+- set_admin(employee_pin): int
+  - Grants admin power if the employee PIN that has been entered is accurate. This process verifies that the PIN entered and the one on file matches. 
+- login(username, password): boolean
+  - Authenticates user, comparing the password and username entered as well. If correct: return true ; allowing system access 
+- logout()
+  - Logs user out; makes sure that no other operations are carried out after logging out. 
 
 
 ### Item Object
