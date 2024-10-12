@@ -104,7 +104,8 @@ Attributes:
 - inventory: array[item objects]
   - An array with every item object that is included in the system. An inventory list is provided by the array and can be repeatedly used for different things like checking stock.
 - edit_queue: array[item objects]
-  - An improvised array used to store item objects until modifications are approved. Before edits are applied, items in this queue that have been updated by staff must be evaluated.  
+  - An improvised array used to store item objects until modifications are approved. Before edits are applied, items in this queue that have been updated by staff must be evaluated.
+  
 Operations:
 - get_item(item_ID): item object
   - Uses item ID to retrieve x item from dictionary. 
