@@ -76,6 +76,7 @@ Attributes:
   - Makes it easier to distinguish goods that come in several color variations, allowing for a search in the inventory to be more precise.
 - name: string
   - An item’s name; helps consumers and staff to recognize a product.
+  
 Operations:
 - get_quantity(): int
   - Returns an item’s stock at the moment; verifies availability.
@@ -121,13 +122,14 @@ Operations:
 ### User Interface
 
 Attributes:
-interface layout: .ui file
-A ui file which specifies the interface’s graphical design for the user.
+- interface layout: .ui file
+  - A ui file which specifies the interface’s graphical design for the user.
+  
 Operations:
-display_ui()
-Uses what is specified in the ui file to load the user interface.
-update_ui()
-In response to user input, the user interface is refreshed. 
+- display_ui()
+  - Uses what is specified in the ui file to load the user interface.
+- update_ui()
+  - In response to user input, the user interface is refreshed. 
 
 ### Checkout Class
 The checkout option allows employees to checkout and give returns to customers. Utilizing transaction objects, employees are able to create custom objects and then update the transaction history through an itreative looping process at the time of checkout. The customer is delivered the cost including the tax, and once payment is confirmed, the system will update the history and the inventory list.
