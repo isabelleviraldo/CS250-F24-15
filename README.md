@@ -63,6 +63,7 @@ Operations:
 
 An item is anything in the store that can be purchased. Each item has an identifying ID that make it easy to search for in the inventory. When the barcode gets scanned, it searches in the item hashmap for the item. The item can also be searched for manually using the other identifiers, the name, color, size, and amount. This class has methods for retrieving the identifiers.
 
+Attributes: 
 - quantity: int
   - Total number of units of x item that is in stock. Whenever there is new inventory, the value rises and falls corresponding to the number of things purchased.
 - item_ID: string
