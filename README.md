@@ -121,6 +121,7 @@ Operations:
   - Approves or disapproves modifications made to the edit queue items. Relevant item objects are updated based on modifications. 
 
 ### User Interface
+The system's interactive features and layout are controlled by the UI class. The interface is loaded to a ui file, presenting elements for user interaction.
 
 Attributes:
 - interface layout: .ui file
