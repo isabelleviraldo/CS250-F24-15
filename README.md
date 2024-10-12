@@ -97,25 +97,25 @@ Operations:
 Each item object is stored here in the inventory hashmap. Using a hash is easier since it allows for O(1) runtime rather than O(n) runtime after accessing an array. Each item ID is the “key” and the item object is what is returned. The methods in this class allow you to add an item object, remove an item, retrieve an item or print a full list of the inventory.
 
 Attributes: 
-item_dictionary: hashmap
-Hashmap with matching object as value as well as the item ID; used to store item objects
-inventory: array[item objects]
-An array with every item object that is included in the system. An inventory list is provided by the array and can be repeatedly used for different things like checking stock.
-edit_queue: array[item objects]
-An improvised array used to store item objects until modifications are approved. Before edits are applied, items in this queue that have been updated by staff must be evaluated.  
+- item_dictionary: hashmap
+  - Hashmap with matching object as value as well as the item ID; used to store item objects
+- inventory: array[item objects]
+  - An array with every item object that is included in the system. An inventory list is provided by the array and can be repeatedly used for different things like checking stock.
+- edit_queue: array[item objects]
+  - An improvised array used to store item objects until modifications are approved. Before edits are applied, items in this queue that have been updated by staff must be evaluated.  
 Operations:
-get_item(item_ID): item object
-Uses item ID to retrieve x item from dictionary. 
-get_inventory(): array[item objects]
-Returns the inventory array’s complete list of item objects. 
-add_to_inventory(item object)
-Adds new item object to inventory array and dictionary; keeps ordered list of all objects.
-remove_from_inventory(item object)
-Item is removed from the inventory array and dictionary. 
-edit_inventory(item object)
-Adds items to the edit queue, allowing inventory item info to be updated.
-approve_changes(boolean)
-Approves or disapproves modifications made to the edit queue items. Relevant item objects are updated based on modifications. 
+- get_item(item_ID): item object
+  - Uses item ID to retrieve x item from dictionary. 
+- get_inventory(): array[item objects]
+  - Returns the inventory array’s complete list of item objects. 
+- add_to_inventory(item object)
+  - Adds new item object to inventory array and dictionary; keeps ordered list of all objects.
+- remove_from_inventory(item object)
+  - Item is removed from the inventory array and dictionary. 
+- edit_inventory(item object)
+  - Adds items to the edit queue, allowing inventory item info to be updated.
+- approve_changes(boolean)
+  - Approves or disapproves modifications made to the edit queue items. Relevant item objects are updated based on modifications. 
 
 ### User Interface
 
