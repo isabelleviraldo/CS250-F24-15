@@ -4,6 +4,10 @@
 - [Authors](#authors)
 - [System Description](#system-description)
 - [Software Architecture Overview](#software-architecure-overview)
+  - [UML Class Diagram](#uml-class-diagram)
+  - [Checkout Class](#checkout-class)
+  - [Transaction History Class](#transaction-history-class)
+  - [Transaction Object](#transaction-object)
 - [Development Plan and Timeline](#development-plan-and-timeline)
 - [Class Descriptions](#class-descriptions)
 
@@ -24,7 +28,7 @@ The system is designed to streamline sales processes, enabling employees to comp
 ### UML Class Diagram
 ![image](https://github.com/user-attachments/assets/7b3a38b7-7453-4630-aa3d-4d10db45977c)
 
-### Checkout Class:
+### Checkout Class
 The checkout option allows employees to checkout and give returns to customers. Utilizing transaction objects, employees are able to create custom objects and then update the transaction history through an itreative looping process at the time of checkout. The customer is delivered the cost including the tax, and once payment is confirmed, the system will update the history and the inventory list.
 
 Attributes:
