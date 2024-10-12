@@ -1,3 +1,7 @@
 To view this file in the most reader-friendly way, please see point-of-sale-system.md
 (https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/point-of-sale-system.md) 
 They are identical in content.
+
+To view UML Diagram, please go to uml-diagram.png (https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/uml-diagram.png)
+
+
