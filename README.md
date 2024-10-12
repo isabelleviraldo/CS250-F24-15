@@ -5,6 +5,11 @@
 - [System Description](#system-description)
 - [Software Architecture Overview](#software-architecure-overview)
   - [UML Class Diagram](#uml-class-diagram)
+- [Class Descriptions](#class-descriptions)
+  - [User Class](#user-class)
+  - [Item Object](#item-object)
+  - [Inventory Class](#inventory-class)
+  - [User Interface](#user-interface)
   - [Checkout Class](#checkout-class)
   - [Transaction History Class](#transaction-history-class)
   - [Transaction Object](#transaction-object)
@@ -23,13 +28,10 @@ This is the document describing the development of a catalog system for any clot
 The system is designed to streamline sales processes, enabling employees to complete transactions, tracking purchases and returns, while automatically updating inventory. Employees can checkout customers with automatic tax calculators, and after completing purchase, the system automatically updates the inventory catalog. Inventory features will include search capabilities by item ID or name, and allow employees to add new items with specific attributes such as price and size. These inventory changes made by the employees must be confirmed by the Admin of the system before implementation into the database. All data, including transaction history and inventory, will be stored in a cloud database. This system is an integral part of managing a clothing store.
 
 ## Software Architecure Overview
-
 ### UML Class Diagram
 ![image](https://github.com/user-attachments/assets/7b3a38b7-7453-4630-aa3d-4d10db45977c)
-
 ## Class Descriptions
 ### User Class
-
 The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
 
 Attributes: 
@@ -56,11 +58,9 @@ Operations:
 - login(username, password): boolean
   - Authenticates user, comparing the password and username entered as well. If correct: return true ; allowing system access 
 - logout()
-  - Logs user out; makes sure that no other operations are carried out after logging out. 
-
+  - Logs user out; makes sure that no other operations are carried out after logging out.
 
 ### Item Object
-
 An item is anything in the store that can be purchased. Each item has an identifying ID that make it easy to search for in the inventory. When the barcode gets scanned, it searches in the item hashmap for the item. The item can also be searched for manually using the other identifiers, the name, color, size, and amount. This class has methods for retrieving the identifiers.
 
 Attributes: 
@@ -93,9 +93,7 @@ Operations:
 - sub_quantity()
   - Reduces item inventory by x amount, usually applied after a purchase.
 
-
 ### Inventory Class
-
 Each item object is stored here in the inventory hashmap. Using a hash is easier since it allows for O(1) runtime rather than O(n) runtime after accessing an array. Each item ID is the “key” and the item object is what is returned. The methods in this class allow you to add an item object, remove an item, retrieve an item or print a full list of the inventory.
 
 Attributes: 
