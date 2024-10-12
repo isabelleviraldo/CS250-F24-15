@@ -63,33 +63,33 @@ Logs user out; makes sure that no other operations are carried out after logging
 
 An item is anything in the store that can be purchased. Each item has an identifying ID that make it easy to search for in the inventory. When the barcode gets scanned, it searches in the item hashmap for the item. The item can also be searched for manually using the other identifiers, the name, color, size, and amount. This class has methods for retrieving the identifiers.
 
-quantity: int
-Total number of units of x item that is in stock. Whenever there is new inventory, the value rises and falls corresponding to the number of things purchased.
-item_ID: string
-Number given to every item in the store; used to look for the item in the system (manually) 
-price: int
-The price of one unit of x product; price may be shown to the user or retrieved for processing a purchase.
-size: string
-An item’s physical measurements or size classification. Ex: small, XL
-color: string
-Makes it easier to distinguish goods that come in several color variations, allowing for a search in the inventory to be more precise.
-name: string
-An item’s name; helps consumers and staff to recognize a product.
+- quantity: int
+  - Total number of units of x item that is in stock. Whenever there is new inventory, the value rises and falls corresponding to the number of things purchased.
+- item_ID: string
+  - Number given to every item in the store; used to look for the item in the system (manually) 
+- price: int
+  - The price of one unit of x product; price may be shown to the user or retrieved for processing a purchase.
+- size: string
+  - An item’s physical measurements or size classification. Ex: small, XL
+- color: string
+  - Makes it easier to distinguish goods that come in several color variations, allowing for a search in the inventory to be more precise.
+- name: string
+  - An item’s name; helps consumers and staff to recognize a product.
 Operations:
-get_quantity(): int
-Returns an item’s stock at the moment; verifies availability.
-get_item_ID(): string
-Obtains item ID, used for manual searches in the inventory system.
-get_price(): int
-Retrieves the item’s current price. Can be used to determine the entire cost or show price to user when checking out.
-get_size(): string
-Obtains the object’s size, helpful for showing data about the item or looking up size variations. 
-get_color(): string
-Returns item color; can help to distinguish items with the same name.
-get_name(): string
-Returns item name, facilitates inventory searches. 
-sub_quantity()
-Reduces item inventory by x amount, usually applied after a purchase.
+- get_quantity(): int
+  - Returns an item’s stock at the moment; verifies availability.
+- get_item_ID(): string
+  - Obtains item ID, used for manual searches in the inventory system.
+- get_price(): int
+  - Retrieves the item’s current price. Can be used to determine the entire cost or show price to user when checking out.
+- get_size(): string
+  - Obtains the object’s size, helpful for showing data about the item or looking up size variations. 
+- get_color(): string
+  - Returns item color; can help to distinguish items with the same name.
+- get_name(): string
+  - Returns item name, facilitates inventory searches. 
+- sub_quantity()
+  - Reduces item inventory by x amount, usually applied after a purchase.
 
 
 ### Inventory Class
