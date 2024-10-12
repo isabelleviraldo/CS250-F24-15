@@ -1,3 +1,3 @@
-To view this file in the most reader-friendly way, please see point-of-sale-system.md 
+To view this file in the most reader-friendly way, please see point-of-sale-system.md (https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/point-of-sale-system.md) 
 
-(https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/point-of-sale-system.md), they are identical in content.
+They are identical in content.
