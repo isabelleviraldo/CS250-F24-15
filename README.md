@@ -27,6 +27,107 @@ The system is designed to streamline sales processes, enabling employees to comp
 ### UML Class Diagram
 ![image](https://github.com/user-attachments/assets/7b3a38b7-7453-4630-aa3d-4d10db45977c)
 
+## Class Descriptions
+### User Class
+
+The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
+
+Attributes: 
+Employee_pin: int
+Each employee has a unique PIN that they must use to access the system. To access administrative features, admin users must have this.
+Username: string
+A string that serves as the user’s system identity. During the login process, the username is used to verify the user’s identity. 
+Password: string
+String for authentication when combined with the username.
+Admin_privileges: boolean
+Gives a signal that the user has administrative powers; when true, the user may advance to unique system features. 
+
+Operations:
+get_pin(): int
+Integer that gives the PIN back; used to confirm access, especially for those who require admin power.
+get_username(): string
+Obtains username of whoever is using the system; used to verify user upon logging in.
+get_password(): string
+Retrieves users' saved password so that it can be evaluated during the process of authentication. Passwords must be hashed.
+Is_admin: boolean
+If user has administrative power, true is returned, else: return false. This essentially aids when deciding what system features can access. 
+set_admin(employee_pin): int
+Grants admin power if the employee PIN that has been entered is accurate. This process verifies that the PIN entered and the one on file matches. 
+login(username, password): boolean
+Authenticates user, comparing the password and username entered as well. If correct: return true ; allowing system access 
+logout()
+Logs user out; makes sure that no other operations are carried out after logging out. 
+
+
+### Item Object
+
+An item is anything in the store that can be purchased. Each item has an identifying ID that make it easy to search for in the inventory. When the barcode gets scanned, it searches in the item hashmap for the item. The item can also be searched for manually using the other identifiers, the name, color, size, and amount. This class has methods for retrieving the identifiers.
+
+quantity: int
+Total number of units of x item that is in stock. Whenever there is new inventory, the value rises and falls corresponding to the number of things purchased.
+item_ID: string
+Number given to every item in the store; used to look for the item in the system (manually) 
+price: int
+The price of one unit of x product; price may be shown to the user or retrieved for processing a purchase.
+size: string
+An item’s physical measurements or size classification. Ex: small, XL
+color: string
+Makes it easier to distinguish goods that come in several color variations, allowing for a search in the inventory to be more precise.
+name: string
+An item’s name; helps consumers and staff to recognize a product.
+Operations:
+get_quantity(): int
+Returns an item’s stock at the moment; verifies availability.
+get_item_ID(): string
+Obtains item ID, used for manual searches in the inventory system.
+get_price(): int
+Retrieves the item’s current price. Can be used to determine the entire cost or show price to user when checking out.
+get_size(): string
+Obtains the object’s size, helpful for showing data about the item or looking up size variations. 
+get_color(): string
+Returns item color; can help to distinguish items with the same name.
+get_name(): string
+Returns item name, facilitates inventory searches. 
+sub_quantity()
+Reduces item inventory by x amount, usually applied after a purchase.
+
+
+### Inventory Class
+
+Each item object is stored here in the inventory hashmap. Using a hash is easier since it allows for O(1) runtime rather than O(n) runtime after accessing an array. Each item ID is the “key” and the item object is what is returned. The methods in this class allow you to add an item object, remove an item, retrieve an item or print a full list of the inventory.
+
+Attributes: 
+item_dictionary: hashmap
+Hashmap with matching object as value as well as the item ID; used to store item objects
+inventory: array[item objects]
+An array with every item object that is included in the system. An inventory list is provided by the array and can be repeatedly used for different things like checking stock.
+edit_queue: array[item objects]
+An improvised array used to store item objects until modifications are approved. Before edits are applied, items in this queue that have been updated by staff must be evaluated.  
+Operations:
+get_item(item_ID): item object
+Uses item ID to retrieve x item from dictionary. 
+get_inventory(): array[item objects]
+Returns the inventory array’s complete list of item objects. 
+add_to_inventory(item object)
+Adds new item object to inventory array and dictionary; keeps ordered list of all objects.
+remove_from_inventory(item object)
+Item is removed from the inventory array and dictionary. 
+edit_inventory(item object)
+Adds items to the edit queue, allowing inventory item info to be updated.
+approve_changes(boolean)
+Approves or disapproves modifications made to the edit queue items. Relevant item objects are updated based on modifications. 
+
+### User Interface
+
+Attributes:
+interface layout: .ui file
+A ui file which specifies the interface’s graphical design for the user.
+Operations:
+display_ui()
+Uses what is specified in the ui file to load the user interface.
+update_ui()
+In response to user input, the user interface is refreshed. 
+
 ### Checkout Class
 The checkout option allows employees to checkout and give returns to customers. Utilizing transaction objects, employees are able to create custom objects and then update the transaction history through an itreative looping process at the time of checkout. The customer is delivered the cost including the tax, and once payment is confirmed, the system will update the history and the inventory list.
 
@@ -106,18 +207,3 @@ To develop this software system, the team needs a team of 5 people, consisting o
 **Week 10**:
 - Start using in a real store
 - Complete documentation
-
-
-
-## Class Descriptions
-**User:**
-
-The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
-
-**Item:**
-
-An item is anything in the store that can be purchased. Each item has an identifying ID that make it easy to search for in the inventory. When the barcode gets scanned, it searches in the item hashmap for the item. The item can also be searched for manually using the other identifiers, the name, color, size, and amount. This class has methods for retrieving the identifiers.
-
-**Inventory:**
-
-Each item object is stored here in the inventory hashmap. Using a hash is easier since it allows for O(1) runtime rather than O(n) runtime after accessing an array. Each item ID is the “key” and the item object is what is returned. The methods in this class allow you to add an item object, remove an item, retrieve an item or print a full list of the inventory.
