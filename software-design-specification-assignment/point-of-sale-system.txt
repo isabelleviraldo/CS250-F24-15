@@ -41,7 +41,8 @@ This is the document describing the development of a catalog system for any clot
 The system is designed to streamline sales processes, enabling employees to complete transactions, tracking purchases and returns, while automatically updating inventory. Employees can checkout customers with automatic tax calculators, and after completing purchase, the system automatically updates the inventory catalog. Inventory features will include search capabilities by item ID or name, and allow employees to add new items with specific attributes such as price and size. These inventory changes made by the employees must be confirmed by the Admin of the system before implementation into the database. All data, including transaction history and inventory, will be stored in a cloud database. This system is an integral part of managing a clothing store.
 
 ## Unified Modeling Language Class Diagram
-![image](https://github.com/user-attachments/assets/7b3a38b7-7453-4630-aa3d-4d10db45977c)
+To view UML Diagram, please go to uml-diagram.png (https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/uml-diagram.png)
+
 ### User Class
 The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
 
@@ -195,7 +196,7 @@ Operations:
   - Gets an item object from the checkout class, and appends it to the cart list the customer is checking out
 
 ## Software Archetecture Diagram
-![Screenshot 2024-10-23 130053](https://github.com/user-attachments/assets/ecf3dd60-ff5d-4d1a-a823-29e666c7bc0d)
+To view SWA Diagram, please go to swa-diagram.png (https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/swa-diagram.png)
 
 ### Key
 The physical components are purple rectangles, outside services are red, options for the user are yellow, viewing the inventory is green, and the ui is represented as blue (with darker blue only being accessibel by Admins)
