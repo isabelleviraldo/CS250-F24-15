@@ -8,31 +8,9 @@ To view SWA Diagram, please go to swa-diagram.png (https://github.com/isabellevi
 
 # Point of Sale System
 
-## Table of Contents
-- [Authors](#authors)
-- [System Description](#system-description)
-- [Unified Modeling Language Class Diagram](#unified-mdeling-language-class-diagram)
-  - [User Class](#user-class)
-  - [Item Object](#item-object)
-  - [Inventory Class](#inventory-class)
-  - [User Interface](#user-interface)
-  - [Checkout Class](#checkout-class)
-  - [Transaction History Class](#transaction-history-class)
-  - [Transaction Object](#transaction-object)
-- [Software Archetecture Diagram](#software-archetecture-diagram)
-  - [Key](#key)
-  - [Physical Interface](#physical-interface)
-  - [Login](#login)
-  - [Software Options](#software-options)
-  - [Transactions](#transactions)
-  - [Data Storage](#data-storage)
-- [Development Plan and Timeline](#development-plan-and-timeline)
-
 ## Authors
 Isabelle Viraldo
-
 Nicholas Moffat
-
 Seven Blackwell
 
 ## System Description
