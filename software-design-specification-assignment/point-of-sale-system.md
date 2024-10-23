@@ -3,9 +3,7 @@
 ## Table of Contents
 - [Authors](#authors)
 - [System Description](#system-description)
-- [Software Architecture Overview](#software-architecure-overview)
-  - [UML Class Diagram](#uml-class-diagram)
-- [Class Descriptions](#class-descriptions)
+- [Unified Modeling Language Class Diagram](#unified-mdeling-language-class-diagram)
   - [User Class](#user-class)
   - [Item Object](#item-object)
   - [Inventory Class](#inventory-class)
@@ -13,6 +11,13 @@
   - [Checkout Class](#checkout-class)
   - [Transaction History Class](#transaction-history-class)
   - [Transaction Object](#transaction-object)
+- [Software Archetecture Diagram](#software-archetecture-diagram)
+  - [Key](#key)
+  - [Physical Interface](#physical-interface)
+  - [Login](#login)
+  - [Software Options](#software-options)
+  - [Transactions](#transactions)
+  - [Data Storage](#data-storage)
 - [Development Plan and Timeline](#development-plan-and-timeline)
 
 ## Authors
@@ -27,10 +32,8 @@ This is the document describing the development of a catalog system for any clot
 
 The system is designed to streamline sales processes, enabling employees to complete transactions, tracking purchases and returns, while automatically updating inventory. Employees can checkout customers with automatic tax calculators, and after completing purchase, the system automatically updates the inventory catalog. Inventory features will include search capabilities by item ID or name, and allow employees to add new items with specific attributes such as price and size. These inventory changes made by the employees must be confirmed by the Admin of the system before implementation into the database. All data, including transaction history and inventory, will be stored in a cloud database. This system is an integral part of managing a clothing store.
 
-## Software Architecure Overview
-### UML Class Diagram
+## Unified Modeling Language Class Diagram
 ![image](https://github.com/user-attachments/assets/7b3a38b7-7453-4630-aa3d-4d10db45977c)
-## Class Descriptions
 ### User Class
 The user is who will be interacting with the system. This could be a basic employee or an administrator. When the user logs into the system, if they are an admin, the admin pin will be entered after logging in with their username and password, otherwise they can continue as an employee. Logging in as an admin grants them admin privileges. This class has methods for retrieving the users login information in order to keep track of who logs in.
 
@@ -143,7 +146,7 @@ Operations:
 - return_object(transaction_ID)
   - Creates a new transaction and copies all the information over from the ID supplied by the customer. It then sets the total as negative the original total of the transaction. After confirming the return of money to the customer, this transaction object is then sent to the transaction history.
 
-### Transaction History Class
+#### Transaction History Class
 Each transaction object is stored in one instance of the transaction history class. When a transaction is either created or refunded, the list is updated. When you update the list, you declare whether its an addition or a removal as a second parameter to the transaction object. This then tells the system to remove or add it to the list.
 
 Attributes:
@@ -183,6 +186,26 @@ Operations:
 - add_item_to_cart(item object)
   - Gets an item object from the checkout class, and appends it to the cart list the customer is checking out
 
+## Software Archetecture Diagram
+![Screenshot 2024-10-23 130053](https://github.com/user-attachments/assets/ecf3dd60-ff5d-4d1a-a823-29e666c7bc0d)
+
+### Key
+The physical components are purple rectangles, outside services are red, options for the user are yellow, viewing the inventory is green, and the ui is represented as blue (with darker blue only being accessibel by Admins)
+
+### Physical Interface
+The physical interface is how the user inputs everything they need to. Within the interface, There is a touchscreen display, for selecting each of the different options the user may want to do. A barcode scanner for scanning items when checking out a customer. A keyboard and mouse for general interactions. A payment terminal for the customer to complete the transaction, which also confirms with the bank before completing the transaction. All of the physical components talk to the software.
+
+### Login
+The only way the user can interact with the system is by entering a valid login.
+
+### Software Options
+Every employee has access to the following software options: refund, transaction, update inventory, and search. However, only the Admin can approve the inventory, and view the transaction history. Each of the options go through their respective use cases, refunding, completing a transaction, updating the inventory, searching for an item, approving the inventory changes, and viewing the transaction history.
+
+### Transactions
+To complete a transaction, the customer must input payment info in the payment terminal, which, once verified with the bank, and sends a confirmation to the software, is recorded in the transaction history. 
+
+### Data Storage
+The refund and transaction options will add their respective actions and all data associated with them to the transaction history stored in the data storage. The data storage is accessed whenever viewing the inventory catalog, and viewing the transaction history.
 
 ## Development Plan and Timeline
 To develop this software system, the team needs a team of 5 people, consisting of 2 Software Developers (Nicholas Moffat and Seven Blackwell), a UI developer (Isabelle Viraldo), a Project Manager (to be hired), and a Quality Assurance Engineer (to be hired). Working with a budget of $200,000, the product can be developed and launched in the span of 10 weeks by following the development plan below. 
