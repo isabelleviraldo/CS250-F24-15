@@ -21,11 +21,11 @@
 - [Development Plan and Timeline](#development-plan-and-timeline)
 - [Test Cases](#test-cases)
   - [Inventory](#inventory)
-    - Unit Testing
+    - [Unit Testing](#unit-testing)
     - Integration Testing
     - System Testing
   - Checkout
-    - Unit Testing
+    - [Unit Testing](#unit-testing)
     - Integration Testing
     - System Testing
 
