@@ -24,7 +24,7 @@
     - [Inventory Unit Testing](#inventory-unit-testing)
     - [Inventory Integration Testing](#inventory-integration-testing)
     - [Inventory System Testing](#inventory-system-testing)
-  - Checkout
+  - [Checkout](#checkout)
     - [Checkout Unit Testing](#checkout-unit-testing)
     - [Checkout Integration Testing](#checkout-integration-testing)
     - [Checkout System Testing](#checkout-system-testing)
