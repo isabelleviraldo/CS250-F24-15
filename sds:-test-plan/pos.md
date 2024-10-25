@@ -21,13 +21,13 @@
 - [Development Plan and Timeline](#development-plan-and-timeline)
 - [Test Cases](#test-cases)
   - [Inventory](#inventory)
-    - [Unit Testing](#unit-testing)
-    - Integration Testing
-    - System Testing
+    - [Inventory Unit Testing](#inventory-unit-testing)
+    - [Inventory Integration Testing](#inventory-integration-testing)
+    - [Inventory System Testing](#inventory-system-testing)
   - Checkout
-    - [Unit Testing](#unit-testing)
-    - Integration Testing
-    - System Testing
+    - [Checkout Unit Testing](#checkout-unit-testing)
+    - [Checkout Integration Testing](#checkout-integration-testing)
+    - [Checkout System Testing](#checkout-system-testing)
 
 ## Authors
 Isabelle Viraldo
@@ -249,7 +249,7 @@ To develop this software system, the team needs a team of 5 people, consisting o
 
 ### Inventory
 
-#### Unit Testing
+#### Inventory Unit Testing
 
 Test Case #1: Add to inventory
 
@@ -319,7 +319,7 @@ Output
 Specified item ID does not match any known items in inventory.
 ```
 
-#### Integration Testing
+#### Inventory Integration Testing
 
 Test Case #1
 
@@ -452,7 +452,7 @@ Size: Medium
 Color: Orange
 ```
 
-#### System Testing
+#### Inventory System Testing
 
 Test Case #1
 
@@ -491,7 +491,7 @@ Expected Results:
 
 ### Checkout
 
-#### Unit Testing
+#### Checkout Unit Testing
 
 Test Case #1: Add items to cart
 
@@ -585,7 +585,7 @@ Jeans  . . . . . . . . . . . $36.00
 Total . . . . . . . . . . . . . . . $48.00
 ```
 
-#### Integration Testing
+#### Checkout Integration Testing
 
 Test Case #1
 
@@ -644,7 +644,7 @@ Tax . . . . . . . . . . . . . . . . $ 3.75
 Total . . . . . . . . . . . . . . . $34.75
 ```
 
-#### System Testing
+#### Checkout System Testing
 
 Test Case #1
 
