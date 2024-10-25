@@ -14,3 +14,7 @@ Seven Blackwell
 ## Software Design Specification Assignment
 
 [Point of Sale System](https://github.com/isabelleviraldo/CS250-F24-15/blob/main/software-design-specification-assignment/point-of-sale-system.md)
+
+## Test Plan Assignment
+
+[Point of Sale System](https://github.com/isabelleviraldo/CS250-F24-15/blob/main/sds%3A-test-plan/point-of-sale-system.md)
