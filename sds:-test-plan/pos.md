@@ -4,6 +4,74 @@
 
 #### Unit Testing
 
+Test Case #1: Add to inventory
+
+This test targets the inventory system, increasing the number of a specified item.
+
+Input:
+```
+inventory.add_item(String itemID, 2)
+```
+Output
+```
+Inventory was updated:
+Name: Hat
+Item ID: 87hsk71
+Price ($): 15
+In stock: 15
+Size: None
+```
+
+Test Case #2: Remove from inventory
+
+This test again targets the inventory system, decreasing the number of a specified item. This would be used in conjunction with checking out customers.
+
+Input:
+```
+inventory.remove_item(String itemID, 4)
+```
+Output
+```
+Inventory was updated:
+Name: Hat
+Item ID: 87hsk71
+Price ($): 15
+In stock: 11
+Size: None
+Color: Red
+```
+Test Case #3: Remove more than available
+
+This test makes sure that the system does not allow you to remove more than is available of a certain item.
+
+Input:
+```
+inventory.item_info(String itemID)
+inventory.remove_item(String itemID, 3)
+```
+Output
+```
+Name: Hat
+Item ID: 87hsk71
+Price ($): 15
+In stock: 1
+Size: None
+Color: Red
+Cannot remove specified number as amount is invalid
+```
+Test Case #4: Invalid itemID
+
+This test targets the inventory system and makes sure that invalid item ID’s are handled correctly
+
+Input:
+```
+inventory.add_item(String itemID, 3)
+```
+Output
+```
+Specified item ID does not match any known items in inventory.
+```
+
 #### Integration Testing
 
 Test Case #1
@@ -177,6 +245,98 @@ Expected Results:
 ### Checkout
 
 #### Unit Testing
+
+Test Case #1: Add items to cart
+
+This test makes sure that multiple items can be added to the cart before a purchase.
+
+Input:
+```
+transaction.add_item_to_cart(String itemID, 2)
+transaction.add_item_to_cart(String itemID, 1)
+transaction.add_item_to_cart(String itemID, 1)
+transaction.display_cart()
+```
+Output:
+```
+Cart:
+Name: Hat
+Item ID: 87hsk71
+Count: 2
+Price ($): 30
+—-------------
+Name: Coat
+Item ID: hsk972h
+Price ($): 70
+—-------------
+Name: Jeans
+Item ID: slab61s
+Price ($): 45
+```
+Test Case #2: Remove items from cart
+
+This test makes sure that items can be removed from the cart before purchase.
+
+Input:
+```
+transaction.display_cart()
+transaction.remove_item_from_cart(String itemID, 1)
+transaction.remove_item_from_cart(String itemID, 1)
+transaction.display_cart()
+```
+Output:
+```
+Cart:
+Name: Hat
+Item ID: 87hsk71
+Count: 1
+Price ($): 15
+—-------------
+Name: Coat
+Item ID: hsk972h
+Price ($): 70
+—-------------
+Name: Jeans
+Item ID: slab61s
+Price ($): 45
+
+Cart:
+Name: Hat
+Item ID: 87hsk71
+Count: 1
+Price ($): 15
+—-------------
+Name: Jeans
+Item ID: slab61s
+Price ($): 45
+```
+
+Test Case #3: Promo code application before checkout
+
+This test makes sure that after a promo code is applied, the price is updated accordingly.
+
+Input:
+```
+transaction.display_total()
+transaction.apply_promo_code(String promoID)
+transaction.display_total()
+```
+Output:
+```
+Red Hat  . . . . . . . . . . $15.00
+Jeans  . . . . . . . . . . . $45.00
+------------------------------------------
+Total . . . . . . . . . . . . . . . $60.00
+
+Promo code applied!
+
+Red Hat  . . . . . . . . . . $12.00
+- $3.00 (20% promo code)
+Jeans  . . . . . . . . . . . $36.00
+	- $9.00 (20% promo code)
+------------------------------------------
+Total . . . . . . . . . . . . . . . $48.00
+```
 
 #### Integration Testing
 
