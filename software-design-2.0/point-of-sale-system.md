@@ -11,11 +11,12 @@
   - [Software Options](#software-options)
   - [Transactions](#transactions)
   - [Data Storage](#data-storage)
-    - [Users Table](#users-table)
-    - [Inventory Table](#inventory-table)
-    - [Transaction History Table](#transaction-history-table)
-    - [Cart Table](#cart-table)
-    - [Inventory Edit Requests Table](#inventory-edit-requests-table)
+- [Data Managment Strategy](#data-managment-strategy)
+  - [Users Table](#users-table)
+  - [Inventory Table](#inventory-table)
+  - [Transaction History Table](#transaction-history-table)
+  - [Cart Table](#cart-table)
+  - [Inventory Edit Requests Table](#inventory-edit-requests-table)
 - [Unified Modeling Language Class Diagram](#unified-modeling-language-class-diagram)
   - [User Class](#user-class)
   - [Item Object](#item-object)
@@ -77,9 +78,12 @@ To complete a transaction, the customer must input payment info in the payment t
 ### Data Storage
 The refund and transaction options will add their respective actions and all data associated with them to the transaction history stored in the data storage. The data storage is accessed whenever viewing the inventory catalog, and viewing the transaction history.
 
-When it comes to the overall management of the data within our system, SQL has the best tools and speed to accomplish the system's needs. It works better than non-SQL programs because of the security it provides the system. A combination of different SQL databases are used to organize data for user management, inventory, inventory requests, cart and transactions. These databases being used in SQL show the teams focus on the integrity of data, scalability and efficiency of the system. Using separate databases allows for the ability to isolate certain data from general inventory data.
+## Data Managment Strategy
+![image](https://github.com/user-attachments/assets/4527dd1d-3c8a-4c49-b29e-57e6d1fe9354)
 
-#### Users Table
+As shown above in the Software Architecture Diagram, this is the orginization of the databases. When it comes to the overall management of the data within our system, SQL has the best tools and speed to accomplish the system's needs. It works better than non-SQL programs because of the security it provides the system. A combination of different SQL databases are used to organize data for user management, inventory, inventory requests, cart and transactions. These databases being used in SQL show the teams focus on the integrity of data, scalability and efficiency of the system. Using separate databases allows for the ability to isolate certain data from general inventory data.
+
+### Users Table
 
 Within this database, the employees login information as well as credentials are stored. SQL is used to ensure the security of the information, as well provide easy control access to the data.
 
@@ -88,7 +92,7 @@ To initialize the database in SQL, do:
 CREATE TABLE Users (employee_pin int, username string, password string, admin_privileges boolean);
 ```
 
-#### Inventory Table
+### Inventory Table
 
 This is where all the information regarding an item will be stored, including the item ID for quick access, price, stock, size and color. This table will work in tandem with the inventory edit requests database to update the inventory as needed as well as with the cart database.
 
@@ -97,7 +101,7 @@ To initialize the database in SQL, do:
 CREATE TABLE Inventory (item_ID string, name string, price int, quantity int, size string, color string);
 ```
 
-#### Transaction History Table
+### Transaction History Table
 
 This database is used to track all of the transactions that are processed by the system. Each transaction is given an ID, a purchase date, and a total. A return boolean is optional and is given on a case by case basis. 
 
@@ -106,7 +110,7 @@ To initialize the database in SQL, do:
 CREATE TABLE Transaction History (transaction_ID string, purchase_date date, cart_ID int, total double, isReturn boolean);
 ```
 
-#### Cart Table
+### Cart Table
 
 Before checking out, items that customers have chosen to buy are stored in the cart table. Each item, represented by the item fields, can be stored in each cart which is uniquely recognized by its cart_ID. To connect the cart to a completed transaction when the purchase is finished, the database additionally contains a transaction_ID. 
 
@@ -115,7 +119,7 @@ To initialize the database in SQL, do:
 CREATE TABLE Cart (cart_ID int, item_1 string, item_2 string, item_3 string, item_4 string, item_5 string, item_6 string, transaction_ID string);
 ```
 
-#### Inventory Edit Requests Table
+### Inventory Edit Requests Table
 
 Inventory changes are managed by the inventory edit request table. Requests have an item_ID and if an item needs to be removed, the request will contain a remove flag. Otherwise, any changes to the item's name, price, quality, color, and size will be recorded in the other fields. Ultimately, the table makes sure that any changes to an item are reviewed to ensure accuracy. 
 
